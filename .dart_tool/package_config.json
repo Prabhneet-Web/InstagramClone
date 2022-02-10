@@ -134,6 +134,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "flutter_svg",
+      "rootUri": "file:///Users/prabhneetnarula/Development/SDKs/Flutter/.pub-cache/hosted/pub.dartlang.org/flutter_svg-1.0.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "flutter_test",
       "rootUri": "file:///Users/prabhneetnarula/Development/SDKs/Flutter/packages/flutter_test",
       "packageUri": "lib/",
@@ -192,6 +198,24 @@
       "rootUri": "file:///Users/prabhneetnarula/Development/SDKs/Flutter/.pub-cache/hosted/pub.dartlang.org/path-1.8.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
+    },
+    {
+      "name": "path_drawing",
+      "rootUri": "file:///Users/prabhneetnarula/Development/SDKs/Flutter/.pub-cache/hosted/pub.dartlang.org/path_drawing-1.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "path_parsing",
+      "rootUri": "file:///Users/prabhneetnarula/Development/SDKs/Flutter/.pub-cache/hosted/pub.dartlang.org/path_parsing-1.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "petitparser",
+      "rootUri": "file:///Users/prabhneetnarula/Development/SDKs/Flutter/.pub-cache/hosted/pub.dartlang.org/petitparser-4.4.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
     },
     {
       "name": "plugin_platform_interface",
@@ -254,13 +278,19 @@
       "languageVersion": "2.14"
     },
     {
+      "name": "xml",
+      "rootUri": "file:///Users/prabhneetnarula/Development/SDKs/Flutter/.pub-cache/hosted/pub.dartlang.org/xml-5.3.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
       "name": "instagram_clone",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "2.15"
     }
   ],
-  "generated": "2022-02-10T01:55:57.997382Z",
+  "generated": "2022-02-10T06:15:03.997207Z",
   "generator": "pub",
   "generatorVersion": "2.15.0"
 }

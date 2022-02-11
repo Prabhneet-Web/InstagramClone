@@ -63,8 +63,26 @@ class _LoginScreenState extends State<LoginScreen> {
                 color: blueColor),
           ),
           const SizedBox(height: 12),
-          Flexible(child: Container(), flex: 2)
+          Flexible(child: Container(), flex: 2),
           //Transtioning for SignUp
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                child: const Text("Don't have an account?"),
+                padding: const EdgeInsets.symmetric(vertical: 8),
+              ),
+              SizedBox(width: 2),
+              GestureDetector(
+                onTap: () {},
+                child: Container(
+                  child: const Text("Sign Up",
+                      style: TextStyle(fontWeight: FontWeight.bold)),
+                  padding: const EdgeInsets.symmetric(vertical: 8),
+                ),
+              )
+            ],
+          )
         ],
       ),
     )));

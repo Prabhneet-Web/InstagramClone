@@ -44,10 +44,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
           //Circular Widget to accept and show our selected file
           Stack(
             children: [
-              CircleAvatar(
+              const CircleAvatar(
                 radius: 64,
                 backgroundImage: NetworkImage(
-                    "https://images.unsplash.com/photo-1644424235641-6c8ba0592af7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"),
+                    "https://images.unsplash.com/photo-1644662691646-c7e8f96dea55?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyMnx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"),
               ),
               Positioned(
                 bottom: -9,

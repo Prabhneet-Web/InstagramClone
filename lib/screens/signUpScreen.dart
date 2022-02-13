@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:instagram_clone/resources/authMethods.dart';
 import 'package:instagram_clone/utils/colors.dart';
 import 'package:instagram_clone/widgets/textFieldInput.dart';
 
@@ -36,11 +37,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
         // mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Flexible(child: Container(), flex: 2),
+          Flexible(child: Container(), flex: 1),
           //svg image,
           SvgPicture.asset('lib/assets/images/Instagram.svg',
               color: primaryColor, height: 64),
-          const SizedBox(height: 64),
+          const SizedBox(height: 55),
           //Circular Widget to accept and show our selected file
           Stack(
             children: [
@@ -50,13 +51,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     "https://images.unsplash.com/photo-1644662691646-c7e8f96dea55?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyMnx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"),
               ),
               Positioned(
-                bottom: -9,
-                left: 80,
+                  bottom: -9,
+                  left: 80,
                   child: IconButton(
-                      onPressed: () {}, icon: Icon(Icons.add_a_photo)))
+                      onPressed: () {}, icon: const Icon(Icons.add_a_photo)))
             ],
           ),
-          SizedBox(height: 24),
+          const SizedBox(height: 24),
           //TextField for username
           TextFieldInput(
               textEditingController: _usernameController,
@@ -83,11 +84,18 @@ class _SignUpScreenState extends State<SignUpScreen> {
               hintText: "Enter your bio",
               textInputType: TextInputType.text),
           const SizedBox(height: 24),
-          const SizedBox(height: 24),
           //Button for login,
           InkWell(
+            onTap: () async {
+              String res = AuthMethod().signUpUser(
+                  email: _emailController.text,
+                  password: _passwordController.text,
+                  username: _usernameController.text,
+                  bio: _bioController.text);
+              print(res);
+            },
             child: Container(
-              child: const Text("Log in"),
+              child: const Text("Sign Up"),
               width: double.infinity,
               alignment: Alignment.center,
               padding: const EdgeInsets.symmetric(vertical: 12),

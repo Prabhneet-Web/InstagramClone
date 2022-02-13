@@ -21,6 +21,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final TextEditingController _bioController = TextEditingController();
   final TextEditingController _usernameController = TextEditingController();
   Uint8List? _image;
+  bool _isLoading = false;
 
   @override
   void dispose() {
@@ -36,6 +37,25 @@ class _SignUpScreenState extends State<SignUpScreen> {
     setState(() {
       _image = im;
     });
+  }
+
+  void signUpUser() async {
+    setState(() {
+      _isLoading = true;
+    });
+    String res = await AuthMethod().signUpUser(
+        email: _emailController.text,
+        password: _passwordController.text,
+        username: _usernameController.text,
+        bio: _bioController.text,
+        file: _image!);
+    print(res);
+    setState(() {
+      _isLoading = false;
+    });
+    if (res != "success") {
+      showSnackBar(res, context);
+    }
   }
 
   @override
@@ -59,9 +79,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
             children: [
               _image != null
                   ? CircleAvatar(
-                      radius: 64, backgroundImage: MemoryImage(_image!))
+                      radius: 58, backgroundImage: MemoryImage(_image!))
                   : const CircleAvatar(
-                      radius: 64,
+                      radius: 58,
                       backgroundImage: NetworkImage(
                           "https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg"),
                     ),
@@ -102,16 +122,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
           const SizedBox(height: 24),
           //Button for login,
           InkWell(
-            onTap: () async {
-              String res = AuthMethod().signUpUser(
-                  email: _emailController.text,
-                  password: _passwordController.text,
-                  username: _usernameController.text,
-                  bio: _bioController.text);
-              print(res);
-            },
+            onTap: signUpUser,
             child: Container(
-              child: const Text("Sign Up"),
+              child: _isLoading
+                  ? const Center(
+                      child: CircularProgressIndicator(
+                      color: primaryColor,
+                    ))
+                  : const Text("Sign Up"),
               width: double.infinity,
               alignment: Alignment.center,
               padding: const EdgeInsets.symmetric(vertical: 12),

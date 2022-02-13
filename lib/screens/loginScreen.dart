@@ -77,7 +77,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               const SizedBox(width: 2),
               GestureDetector(
-                onTap: () => SignUpScreen(),
+                onTap: () => const SignUpScreen(),
                 child: Container(
                   child: const Text("Sign Up",
                       style: TextStyle(fontWeight: FontWeight.bold)),

@@ -9,3 +9,7 @@ pickImage(ImageSource source) async {
     return await _file.readAsBytes();
   }
 }
+
+showSnackBar(String content, BuildContext context) {
+  ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(content)));
+}

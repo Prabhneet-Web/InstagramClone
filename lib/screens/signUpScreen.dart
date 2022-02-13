@@ -1,7 +1,11 @@
+import 'dart:typed_data';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:instagram_clone/resources/authMethods.dart';
 import 'package:instagram_clone/utils/colors.dart';
+import 'package:instagram_clone/utils/utils.dart';
 import 'package:instagram_clone/widgets/textFieldInput.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -16,6 +20,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _bioController = TextEditingController();
   final TextEditingController _usernameController = TextEditingController();
+  Uint8List? _image;
 
   @override
   void dispose() {
@@ -24,6 +29,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
     _passwordController.dispose();
     _bioController.dispose();
     _usernameController.dispose();
+  }
+
+  void selectImage() async {
+    Uint8List im = await pickImage(ImageSource.gallery);
+    setState(() {
+      _image = im;
+    });
   }
 
   @override
@@ -40,21 +52,25 @@ class _SignUpScreenState extends State<SignUpScreen> {
           Flexible(child: Container(), flex: 1),
           //svg image,
           SvgPicture.asset('lib/assets/images/Instagram.svg',
-              color: primaryColor, height: 64),
-          const SizedBox(height: 55),
+              color: primaryColor, height: 66),
+          const SizedBox(height: 40),
           //Circular Widget to accept and show our selected file
           Stack(
             children: [
-              const CircleAvatar(
-                radius: 64,
-                backgroundImage: NetworkImage(
-                    "https://images.unsplash.com/photo-1644662691646-c7e8f96dea55?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyMnx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"),
-              ),
+              _image != null
+                  ? CircleAvatar(
+                      radius: 64, backgroundImage: MemoryImage(_image!))
+                  : const CircleAvatar(
+                      radius: 64,
+                      backgroundImage: NetworkImage(
+                          "https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg"),
+                    ),
               Positioned(
                   bottom: -9,
                   left: 80,
                   child: IconButton(
-                      onPressed: () {}, icon: const Icon(Icons.add_a_photo)))
+                      onPressed: selectImage,
+                      icon: const Icon(Icons.add_a_photo)))
             ],
           ),
           const SizedBox(height: 24),

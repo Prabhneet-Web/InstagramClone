@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:instagram_clone/resources/authMethods.dart';
+import 'package:instagram_clone/responsive/mobile_screen_layout.dart';
+import 'package:instagram_clone/responsive/responsive_screen_layout.dart';
+import 'package:instagram_clone/responsive/web_screen_layout.dart';
 import 'package:instagram_clone/screens/signUpScreen.dart';
 import 'package:instagram_clone/utils/colors.dart';
 import 'package:instagram_clone/utils/utils.dart';
@@ -32,12 +35,21 @@ class _LoginScreenState extends State<LoginScreen> {
     String res = await AuthMethod().loginUser(
         email: _emailController.text, password: _passwordController.text);
     if (res == "success") {
+      Navigator.of(context).pushReplacement(MaterialPageRoute(
+          builder: (context) => const ResponsiveLayout(
+              webScreenLayout: WebScreenLayout(),
+              mobileScreenLayout: MobileScreenLayout())));
     } else {
       showSnackBar(res, context);
     }
     setState(() {
       _isLoading = false;
     });
+  }
+
+  void navigateToSignUp() {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => const SignUpScreen()));
   }
 
   @override
@@ -75,7 +87,8 @@ class _LoginScreenState extends State<LoginScreen> {
             onTap: loginUser,
             child: Container(
               child: _isLoading
-                  ? const Center(child: CircularProgressIndicator(color: primaryColor))
+                  ? const Center(
+                      child: CircularProgressIndicator(color: primaryColor))
                   : const Text("Log in"),
               width: double.infinity,
               alignment: Alignment.center,
@@ -98,7 +111,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               const SizedBox(width: 2),
               GestureDetector(
-                onTap: () => const SignUpScreen(),
+                onTap: () => navigateToSignUp,
                 child: Container(
                   child: const Text("Sign Up",
                       style: TextStyle(fontWeight: FontWeight.bold)),

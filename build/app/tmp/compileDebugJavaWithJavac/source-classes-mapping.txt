@@ -1,6 +1,0 @@
-io/flutter/plugins/GeneratedPluginRegistrant.java
- io.flutter.plugins.GeneratedPluginRegistrant
-io/flutter/app/FlutterMultiDexApplication.java
- io.flutter.app.FlutterMultiDexApplication
-com/example/instagram_clone/BuildConfig.java
- com.example.instagram_clone.BuildConfig

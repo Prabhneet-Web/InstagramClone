@@ -110,7 +110,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		8d/XIxYZdFSIRObCrov5GUtZf8Q=
+		Aj4YU4Hx0ZwFSZdE58dszC6+4ro=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -118,7 +118,7 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		DxpVQXUdOd5DV5vGu1Yni4Rvodg=
+		Z3M97IL4qm2brDKmqiOOrSR/eYg=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<data>
@@ -130,7 +130,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/NOTICES.Z</key>
 		<data>
-		eBxcJuMBruxzAjsfmDfjJ1AmEsk=
+		rpP+406Pz9LPKSORpmUds10eF50=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/fonts/MaterialIcons-Regular.otf</key>
 		<data>
@@ -142,7 +142,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		8kQUBNjol9xspMIFruYG8OW+ano=
+		o0wUVxIzaalb8bHRvP8RncCt0q8=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/lib/assets/images/Instagram.svg</key>
 		<data>
@@ -661,7 +661,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			BoYoKbv/z6/TxmM4IYvqN65cWKXXqSGyg9Q/54Kg9g0=
+			cMSHba/hVnx7kvbf+tSSxrI875LQWCB6vqrFumjGYy0=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -675,7 +675,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			lUACYYYv2oVURa6H5ez5QJfAvpF0PGX3WMR2qj3xxM8=
+			v2IsWlRuNfF63e7ALa7VwtPsrQIKA2h/e+zIr3bp8wU=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
@@ -696,7 +696,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			NVU2V7qq+DHq/3MVRKLa7b1w2xsDenNWvQ5Mhvt4FF4=
+			fhV++joMx4SGB4gyUlkq/gCjYrcAT8GO62Jb0nqRU6g=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/fonts/MaterialIcons-Regular.otf</key>
@@ -717,7 +717,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			kHH1TjKuUruR1JACApZTgry18IjA4XK9FYkaw8EYD3I=
+			QdSMwNcmmKirvd5Th2BYUmaZ3wckyCAZXuOgFvRK6No=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/lib/assets/images/Instagram.svg</key>

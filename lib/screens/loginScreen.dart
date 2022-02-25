@@ -32,7 +32,7 @@ class _LoginScreenState extends State<LoginScreen> {
     setState(() {
       _isLoading = true;
     });
-    String res = await AuthMethod().loginUser(
+    String res = await AuthMethods().loginUser(
         email: _emailController.text, password: _passwordController.text);
     if (res == "success") {
       Navigator.of(context).pushReplacement(MaterialPageRoute(
